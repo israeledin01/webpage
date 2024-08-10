@@ -3,59 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>israel edin website</title>
-    <style>
-        h1{color: brown;}
-        h1{font-family: 'Times New Roman', Times, serif;}
-        p{color: blue;}
-    </style>
+    <title>My eCommerce Site</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>hi welcome to israel edin website</h1>
-    <h1>my master webpage</h1>
-    <img width="300px" src="profile.png" alt="">
-    <p> explore our website to learn about our products. we have specific goal. we committed
-        to deliver our expectional quality. outstanding customer service and paralled experstic
-    </p>
-    <p>introduction of piggypow 
-        mission and vision
-    </p>
-
-      <!-- Sign In Form -->
-    <h2>Sign In</h2>
-    <form id="sign-in-form">
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" required>
-    
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required>
-    
-    <button type="submit">Sign In</button>
-    </form>
-    
-    <!-- Sign Up Form -->
-    <h2>Sign Up</h2>
-    <form id="sign-up-form">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required>
-    
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
-    
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" required>
-    
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required>
-    
-    <label for="confirm-password">Confirm Password:</label>
-    <input type="password" id="confirm-password" name="confirm-password" required>
-    
-    <button type="submit">Sign Up</button>
-
-</form>
-
-<img width="500px" src="screen.jpg" alt="">
-    
+    <header>
+        <h1>My eCommerce Store</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="product-list">
+            <!-- Product items will be dynamically inserted here -->
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 My eCommerce Store</p>
+    </footer>
+    <script src="scripts.js"></script>
 </body>
 </html>
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em 0;
+}
+
+header nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.product-item {
+    border: 1px solid #ddd;
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const products = [
+        { id: 1, name: 'Product 1', price: 29.99 },
+        { id: 2, name: 'Product 2', price: 39.99 },
+        { id: 3, name: 'Product 3', price: 49.99 }
+    ];
+
+    const productList = document.querySelector('.product-list');
+
+    products.forEach(product => {
+        const productElement = document.createElement('div');
+        productElement.className = 'product-item';
+        productElement.innerHTML = `
+            <h2>${product.name}</h2>
+            <p>$${product.price.toFixed(2)}</p>
+            <button>Add to Cart</button>
+        `;
+        productList.appendChild(productElement);
+    });
+});
+
+const express = require('express');
+const app = express();
+const port = 3000;
+
+// Middleware to serve static files
+app.use(express.static('public'));
+
+// Route to fetch products
+app.get('/api/products', (req, res) => {
+    const products = [
+        { id: 1, name: 'Product 1', price: 29.99 },
+        { id: 2, name: 'Product 2', price: 39.99 },
+        { id: 3, name: 'Product 3', price: 49.99 }
+    ];
+    res.json(products);
+});
+
+app.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}`);
+});
+
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost:27017/ecommerce', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
+
+const productSchema = new mongoose.Schema({
+    name: String,
+    price: Number
+});
+
+const Product = mongoose.model('Product', productSchema);
+
+// Example of saving a product
+const newProduct = new Product({ name: 'Product 4', price: 59.99 });
+newProduct.save().then(() => console.log('Product saved'));
+
+const stripe = require('stripe')('your_stripe_secret_key');
+
+app.post('/create-payment-intent', async (req, res) => {
+    const { amount } = req.body;
+
+    const paymentIntent = await stripe.paymentIntents.create({
+        amount,
+        currency: 'usd',
+        payment_method_types: ['card'],
+    });
+
+    res.json({ clientSecret: paymentIntent.client_secret });
+});
+
