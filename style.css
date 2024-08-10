@@ -1,50 +1,99 @@
-body {
-    font-family: Arial, sans-serif;
+:root{
+    --red:crimson;
+    --green:#53BF9D;
+    --yellow:#FFC54D;
+    --white:whitesmoke;
+}
+
+body{
     margin: 0;
-    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+.landing{
+    background-image: url(avengers.jpg.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: var(--green);
 }
 
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 1em 0;
-}
-
-header nav ul {
-    list-style-type: none;
-    padding: 0;
-    text-align: center;
-}
-
-header nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-header nav ul li a {
-    color: #fff;
+header a{
     text-decoration: none;
+    color:var(--white)
+
 }
 
-.product-list {
+header{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 20px;
+    padding: 1em;
 }
 
-.product-item {
-    border: 1px solid #ddd;
-    margin: 10px;
-    padding: 10px;
-    width: 200px;
+#logo{
+    flex:2;
+    font-size: 1.30em;
 }
 
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1em 0;
+nav{
+    flex:4;
+    display: flex;
+
 }
 
-.product-list{background-image: url(shopimg.jpg)}
+nav a:hover{
+    color:var(--green)
+
+}
+
+.maintext{
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    justify-content: center;
+    padding: 2em;
+
+}
+
+.tagline1{
+    color:var(--white);
+    font-size:2.5em;
+    font-weight: bolder;
+
+}
+
+.tagline2{
+    color:var(--yellow)
+    
+
+}
+
+.maintext div{
+    margin-top:.75em;
+}
+.maintext button{
+    width:20vw;
+    margin-top: 2em;
+    border-radius: 10px;
+    padding: .7em;
+    background-color: var(--green);
+    color: var(--white);
+    border:1px solid var(--green)
+
+}
+
+.menu{
+    display: grid;
+    background:linear-gradient(to right,rgb(100,100,100),rgb(213, 250, 143));
+    color:var(whitesmoke);
+}
+
+#menuheading,#locheading{
+    background:linear-gradient(to right,rgb(100,100,100),rgb(213,250,143));
+    size: 2.5em;
+    :var(--red);
+}
+.element{
+    background-image: url(football.jpg);
+}
+
+
