@@ -1,154 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <title>EDIN</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- My CSS -->
     <link rel="stylesheet" href="style.css">
-    <title>israeledin</title>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
+
 <body>
-    <h1>
-        THE OFFICIAL ISRAEL EDIN SITES <i class="fa-regular fa-futbol"></i>
-    </h1>
-    <div class="landing">
-        <header>
-            <a href="index.html" id="logo"></a>
-                <nav>
-                    <a href="">shop</a><i class="fa-solid fa-shop"></i>
-                    </nav>
-                    <nav>
-                    <a href="">menu</a><i class="fa-solid fa-bars"></i>
-                    </nav>
-                <a href="">locations</a>
-            </nav>
-        </header>
-    
-<div class="maintext">
-    <div class="tagline1">
-        we deliver your products
-     </div>
-     <div class="tagline2">
-        deliver within 10 minutes
-      </div>
-      <div class="callus">
-        contact us @+91 10101025252
-      </div>
-      <button>order submit</button>
-</div>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <h1>EDIN</h1>
+        <div class="navbar-links">
+            <p class="navbar-link"><a href="index.html">Home</a></p>
+            <p class="navbar-link"><a href="collection.html">Collections</a></p>
+            <p class="navbar-link"><a href="contact.html">Contact</a></p>
+        </div>
+        <div class="navbar-menu-toggle" onclick="showNavbar()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Side Navbar -->
+    <div class="side-navbar">
+        <p class="close-navbar" onclick="closeNavbar()">
+            <i class="fa-solid fa-xmark"></i>
+        </p>
+        <div class="side-navbar-links">
+            <p class="side-navbar-link"><a href="index.html">Home</a></p>
+            <p class="side-navbar-link"><a href="collection.html">Collections</a></p>
+            <p class="side-navbar-link"><a href="contact.html">Contact</a></p>
+        </div>
     </div>
 
-    <h2 id="menu">menu</h2>
-    <div class="menu"> <i class="fa-solid fa-location-dot"></i>
-        <div class="premium">
-            <table>
-                <th colspan="2">starter</th>
-                <tr>
-                    <td>neymar book </td>
-                    <td>&#8377 180</td>
-                </tr>
-                <tr>
-                    <td>leonel messi book</td>
-                    <td>&#8377 180</td>
-                </tr>
-                <tr>
-            <td>cristiano ronaldo book</td>
-            <td>&#8377 196</td>
-                </tr>
-                <td>kyllian mbappe book</td>
-                <td>&#8377 120</td>
-                <tr>
-                    <td>luka modric book</td>
-                    <td>&#8377 110</td>
-                </tr>
-                <tr>
-                    <td>lamine yamal book</td>
-                    <td>&#8377 100</td>
-                </tr>
-                <tr>
-                    <td>harry kane book</td>
-                    <td>&#8377 130</td>
-                </tr>
-                    </table>
-                   
-
+    <!-- Header -->
+    <div class="header">
+        <div>
+            <h1>We Create to Help You Celebrate</h1>
+            <p>With our unique collection</p>
+            <button class="header-button">Shop Now</button>
+        </div>
+        <img class="header-image" src="fashion.jpg.jpg" width="300" height="300" alt="Fashion Image">
     </div>
-<div class="gold pack">
-    <table>
-        <th colspan="2">gold pack</th>
-        <tr>
-            <td>bernado silva book</td>
-            <td>&#8377 55</td>
-        </tr>
-        <tr>
-            <td>grezeman book</td>
-            <td>&#8377 50</td>
-        </tr>
-        <tr>
-            <td>john cena</td>
-            <td>&#8377 80</td>
-        </tr>
-        <tr>
-            <td>roman reigns</td>
-            <td>&#8377 90</td>
-        </tr>
-        <tr>
-    <td>Fernandez</td>
-    <td>&#8377; 75</td>
-</tr>
-<tr>
-    <td>Martinez</td>
-    <td>&#8377; 75</td>
-</tr>
-<tr>
-    <td>Gabriel Jesus</td>
-    <td>&#8377; 90</td>
-</tr>
-<tr>
-    <td>Antoni</td>
-    <td>&#8377; 75</td>
-</tr>
-<tr>
-    <td>Thiago Silva</td>
-    <td>&#8377; 85</td>
-</tr>
-<tr>
-    <td>Hulk Hogan</td>
-    <td>&#8377; 80</td>
-</tr>
-    </table>
-    <p>
-        What We Offer
-1. Extensive Collection:
-Explore our vast catalog featuring everything from bestsellers and timeless classics to niche genres and rare finds. Whether you’re into fiction, non-fiction, self-help, or academic texts, we have something to cater to every interest and taste.
 
-2. Personalized Recommendations:
-Our advanced recommendation system suggests books based on your preferences and past purchases. Discover your next great read with ease, thanks to our tailored suggestions that match your unique interests.
-
-3. Convenient Shopping Experience:
-Enjoy a seamless shopping experience with our user-friendly website. Browse, search, and shop for books with just a few clicks. We offer multiple payment options and a secure checkout process to ensure your transactions are safe and straightforward.
-
-4. Fast and Reliable Shipping:
-We understand the excitement of receiving a new book. That’s why we offer fast and reliable shipping options, ensuring your orders arrive promptly and in excellent condition, so you can start reading without delay.
-
-5. Exceptional Customer Service:
-Our dedicated customer service team is here to assist you with any questions or concerns. Whether you need help finding a specific title or support with your order, we’re just a call or email away, ready to provide prompt and friendly assistance.
-
-
-    </p>
-</div>
-<h2 id="locheading">locations</h2>
-<div class="locations">
-    <div class="annanagar">
-        <h2>anna nagar</h2>
-        <address>
-            145, jaya suriya street
-            anna nagar,</br>
-            chennai-999
-        </address>
-
+    <!-- Service -->
+    <div class="service">
+        <div class="service-container-1">
+            <div>
+                <h2>Best Service Experience</h2>
+                <h2>Customer Support 24/7</h2>
+            </div>
+            <div>
+                <p>We are committed to making your interaction with EDIN seamless, stress-free, and enjoyable.</p>
+            </div>
+        </div>
+        <div class="service-container-2">
+            <div>
+                <i class="fa-regular fa-face-smile"></i>
+                <h4>Your Fulfillment is Our Priority</h4>
+                <h4>Your satisfaction is our number one priority, and we are committed to ensuring that every interaction with us is positive.</h4>
+            </div>
+            <div>
+                <i class="fa-solid fa-tshirt"></i>
+                <h4>Daily Brand New Collection</h4>
+                <h4>Stay ahead of the curve with EDIN's daily new arrivals! Our brand new collections are added daily.</h4>
+            </div>
+            <div>
+                <i class="fa-solid fa-truck-fast"></i>
+                <h4>Safe, Secure & Speedy Delivery</h4>
+                <h4>With EDIN, you can trust that your orders will be delivered safely, securely, and speedily. We are dedicated to providing a hassle-free online shopping experience.</h4>
+            </div>
+        </div>
     </div>
-</div>
-</h2>
+
+    <!-- New Arrival -->
+     <div>
+        <h2>New Arrival</h2>
+    <div class="new-arrival">
+        <div class="new-arrival-container">
+            <img src="funky..jpg" width="200" height="200" alt="Funky Item">
+            <button>Shop Now <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <div class="new-arrival-container">
+            <img src="gf.jpg" width="200" height="200" alt="GF Item">
+            <button>Shop Now <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <div class="new-arrival-container">
+            <img src="girl..jpg" width="200" height="200" alt="Girl Item">
+            <button>Shop Now <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <div class="new-arrival-container">
+            <img src="israel.jpg - Copy (2).jpg" width="200" height="200" alt="Israel Item">
+            <button>Shop Now <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <div class="new-arrival-container">
+            <img src="edinbro.jpg" width="200" height="200" alt="Edinbro Item">
+            <button>Shop Now <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <div class="new-arrival-container">
+            <img src="nigga.jpg" width="200" height="200" alt="Nigerian Item">
+            <button>Shop Now <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+
+        <div class="new-arrival-container">
+            <img src="https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" width="200" height="200" alt="Nigerian Item">
+            <button>Shop Now <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+
+        <div class="new-arrival-container">
+            <img src="https://images.pexels.com/photos/2955375/pexels-photo-2955375.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" width="200" height="200" alt="Nigerian Item">
+            <button>Shop Now <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+
+        <div style="padding: 20px"></div>
+    </div>
+
+    <div>
+        <h2>most liked</h2>
+    <div class="new-arrival">
+        <div class="new-arrival-container">
+            <img src="funky..jpg" width="200" height="200" alt="Funky Item">
+            <button>Shop Now <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <div class="new-arrival-container">
+            <img src="gf.jpg" width="200" height="200" alt="GF Item">
+            <button>Shop Now <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <div class="new-arrival-container">
+            <img src="girl..jpg" width="200" height="200" alt="Girl Item">
+            <button>Shop Now <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <div class="new-arrival-container">
+            <img src="israel.jpg - Copy (2).jpg" width="200" height="200" alt="Israel Item">
+            <button>Shop Now <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+
+
+        <!--news-->
+
+        <div class="acknowledge">
+            <h2>join our community page</h2>
+            <p>signup our page to get more updates and discounts exclusively</p>
+            <div>
+                <input type="text" class="search">
+            </div>
+        <div>
+            <button>Get Notified <i class="fa-solid fa-bell"></i></button>
+        </div>
+
+        </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-container">
+            <div class="footer-box-1">
+                <h2 class="heading text">EDIN</h2>
+                <p>EDIN is a legally compliant and authorized online shopping platform, dedicated to providing a secure and satisfying experience.</p>
+                <div class="footer-icon-container">
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                </div>
+            </div>
+            <p>@03082005edinofficial.com</p>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
 </body>
+
 </html>

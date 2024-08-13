@@ -1,99 +1,323 @@
-:root{
-    --red:crimson;
-    --green:#53BF9D;
-    --yellow:#FFC54D;
-    --white:whitesmoke;
-}
-
-body{
+/* Reset default padding and margin */
+* {
+    padding: 0;
     margin: 0;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
-}
-.landing{
-    background-image: url(avengers.jpg.jpg);
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    color: var(--green);
+    box-sizing: border-box;
 }
 
-header a{
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Navbar styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    box-shadow: 0 26px 58px 0 rgba(0, 0, 0, 0.22), 
+                0 5px 14px 0 rgba(0, 0, 0, 0.18);
+}
+
+.navbar-links {
+    display: flex;
+    column-gap: 20px;
+}
+
+.navbar-links a {
     text-decoration: none;
-    color:var(--white)
-
+    color: #808080;
 }
 
-header{
+.navbar-links a:hover {
+    text-decoration: underline;
+    color: #808080;
+}
+
+.navbar-menu-toggle {
+    display: none;
+}
+
+/* Header styles */
+.header {
     display: flex;
-    padding: 1em;
+    justify-content: center;
+    gap: 50px;
+    padding: 50px;
 }
 
-#logo{
-    flex:2;
-    font-size: 1.30em;
+.header-button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #1d232c;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
 }
 
-nav{
-    flex:4;
+.service {
+    padding: 20px;
+}
+
+.service-container-1 {
     display: flex;
-
+    justify-content: center;
+    align-items: center;
 }
 
-nav a:hover{
-    color:var(--green)
-
+/* Service Container Styles */
+.service-container-2 {
+    display: flex;
+    flex-direction: column; /* Changed from row to column for stacking items vertically */
+    justify-content: space-between;
 }
 
-.maintext{
+.service-container-2 div {
+    background-color: #B2BEB5; /* Ash gray color */
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px; /* Added margin to separate items */
+}
+
+/* New Arrival Styles */
+.new-arrival {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.new-arrival-container {
+    position: relative;
+    flex-basis: 20%;
+    margin: 10px;
+    text-align: center; /* Center text inside the container */
+}
+
+.new-arrival-button {
+    padding: 5px 10px; /* Combined padding properties */
+    margin-top: 10px;
+    position: absolute;
+    bottom: 10px; /* Positioned at the bottom to avoid overlap with the image */
+    left: 50%; /* Center the button horizontally */
+    transform: translateX(-50%); /* Centering alignment */
+    color: #1d232c;
+    background-color: #ffffff; /* Add background color for visibility */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor for button */
+}
+
+/* News Container Styles */
+.news {
     display: flex;
     flex-direction: column;
-    height: 50vh;
-    justify-content: center;
-    padding: 2em;
-
+    align-items: center;
+    padding: 20px; /* Added padding for better spacing */
 }
 
-.tagline1{
-    color:var(--white);
-    font-size:2.5em;
-    font-weight: bolder;
-
+/* News Input Styles */
+.news input {
+    padding: 11px;
+    width: 80vw; /* Width of the input relative to viewport width */
+    margin-bottom: 10px;
+    border: 3px solid black; /* Simplified border property */
+    border-radius: 5px; /* Optional: Added border radius for a smoother look */
+    box-sizing: border-box; /* Ensure padding and border are included in the total width */
 }
 
-.tagline2{
-    color:var(--yellow)
-    
 
+/* Side Navbar styles */
+.side-navbar {
+    background-color: grey;
+    width: 50%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    padding: 20px;
+    color: white;
+    display: none;
+    transition: 0.3s;
 }
 
-.maintext div{
-    margin-top:.75em;
+.side-navbar.show {
+    left: 0;
 }
-.maintext button{
-    width:20vw;
-    margin-top: 2em;
+
+.close-navbar {
+    text-align: right;
+    cursor: pointer;
+}
+
+.side-navbar-link {
+    margin-bottom: 30px;
+}
+
+.side-navbar-links a {
+    text-decoration: none;
+    color: white;
+}
+
+.side-navbar-links a:hover {
+    text-decoration: underline;
+}
+
+/* Product Selection styles */
+.product-selection {
+    padding: 20px;
+}
+
+.product-search {
+    width: 80%;
+    border: 2px solid black;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: auto;
+}
+
+.product-search input {
+    border: none;
+    background-color: transparent;
+    width: 100%;
+}
+
+.product-search input:focus {
+    outline: none;
+}
+
+.products {
+    padding: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.products-box {
+    text-align: center;
+    flex-basis: 20%;
+}
+
+.products-box img {
     border-radius: 10px;
-    padding: .7em;
-    background-color: var(--green);
-    color: var(--white);
-    border:1px solid var(--green)
-
-}
-
-.menu{
-    display: grid;
-    background:linear-gradient(to right,rgb(100,100,100),rgb(213, 250, 143));
-    color:var(whitesmoke);
-}
-
-#menuheading,#locheading{
-    background:linear-gradient(to right,rgb(100,100,100),rgb(213,250,143));
-    size: 2.5em;
-    :var(--red);
-}
-.element{
-    background-image: url(football.jpg);
 }
 
 
+/* Contact Page Styles */
+.contact-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Form Container */
+.contact-page form {
+    width: 100%;
+    max-width: 500px;
+    background-color: #f4f4f4; /* Light background for form */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Element Styling */
+.contact-page label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #1d232c; /* Adjust as needed */
+}
+
+.contact-page .form-group {
+    margin-bottom: 15px;
+}
+
+.contact-page input[type="text"],
+.contact-page input[type="email"],
+.contact-page input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #B2BEB5; /* Ash gray color */
+    border-radius: 5px;
+    box-sizing: border-box; /* Include padding and border in the total width */
+}
+
+/* Submit Button Styling */
+.contact-page input[type="submit"] {
+    background-color: #1d232c; /* Dark background color for the button */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+.contact-page input[type="submit"]:hover {
+    background-color: #333; /* Darker shade on hover */
+}
+
+
+
+
+/* Footer styles */
+.footer {
+    margin-top: 20px;
+    padding: 40px;
+    background-color: #1d232c;
+    color: white;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-box-1 {
+    max-width: 50%;
+}
+
+.footer-icon-container i {
+    font-size: 24px;
+    margin-right: 10px;
+    color: white;
+}
+
+.footer-icon-container i:hover {
+    color: #ddd;
+}
+
+/* Media Query for responsive design */
+@media screen and (max-width: 700px) {
+    .navbar-menu-toggle {
+        display: block;
+    }
+
+    .navbar-links {
+        display: none;
+    }
+
+    .side-navbar {
+        left: 0;
+        display: block;
+    }
+
+    .side-navbar-link {
+        margin-bottom: 20px;
+    }
+
+    .header-image {
+        display: none;
+    }
+
+    .service-container-1 {
+        display: none;
+    }
+}
